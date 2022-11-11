@@ -1,5 +1,7 @@
 import { Component, VERSION } from '@angular/core';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
+import { createWorker } from 'tesseract.js';
+
 
 @Component({
   selector: 'my-app',
