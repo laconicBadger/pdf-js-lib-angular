@@ -1,8 +1,8 @@
 import { Component, VERSION } from '@angular/core';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
-import { createWorker } from 'tesseract.js';
 import { getDocument, PDFPageProxy, PDFDocumentProxy } from 'pdfjs-dist';
-
+//import { createWorker } from 'tesseract.js';
+//import * as Tesseract from 'tesseract.js';
 // TODO
 // - caste pdf seite als canvas mit pdf-lib
 //
@@ -16,6 +16,7 @@ export class AppComponent {
   // properties
   page1download: HTMLAnchorElement;
   page2download: HTMLAnchorElement;
+  pdfPageCanvas: HTMLCanvasElement;
   // methods
   filePicked(event: Event) {
     const element = event.currentTarget as HTMLInputElement;
@@ -72,13 +73,13 @@ export class AppComponent {
     this.page2download.click();
   }
 
-  pdfToImages(
-    data: ArrayBuffer | string,
-    pdf_name: string
-  ): Array<HTMLCanvasElement> {
+  async pdfToImages(data: ArrayBuffer | string, pdf_name: string) {
     const resultImages = new Array<HTMLCanvasElement>();
     // todo...
-
+    const pdfDoc = getDocument(data);
+    await pdfDoc.promise.then((doc) => {
+      // continue here!
+    });
     return resultImages;
   }
 }
