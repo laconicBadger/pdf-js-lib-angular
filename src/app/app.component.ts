@@ -71,4 +71,14 @@ export class AppComponent {
   downloadPage2() {
     this.page2download.click();
   }
+
+  pdfToImages(
+    data: ArrayBuffer | string,
+    pdf_name: string
+  ): Array<HTMLCanvasElement> {
+    const resultImages = new Array<HTMLCanvasElement>();
+    // todo...
+
+    return resultImages;
+  }
 }
