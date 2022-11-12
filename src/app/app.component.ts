@@ -1,7 +1,11 @@
 import { Component, VERSION } from '@angular/core';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { createWorker } from 'tesseract.js';
+import { getDocument, PDFPageProxy, PDFDocumentProxy } from 'pdfjs-dist';
 
+// TODO
+// - caste pdf seite als canvas mit pdf-lib
+//
 
 @Component({
   selector: 'my-app',
